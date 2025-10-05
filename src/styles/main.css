@@ -654,3 +654,17 @@ footer a {
         text-align: center;
     }
 }
+
+
+@supports (position: sticky) {
+  /* nothing — browser ondersteunt sticky, we doen niets extra */
+}
+@supports not (position: sticky) {
+  .main-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+  /* reserveer ruimte zodat content niet onder de fixed header schiet */
+  body { padding-top: calc(var(--main-header-height, 220px)); }
+}

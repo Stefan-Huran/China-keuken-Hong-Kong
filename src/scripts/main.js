@@ -201,4 +201,24 @@ document.addEventListener('DOMContentLoaded', function() {
     track.style.transition = "none";
     track.style.transform = `translateX(-${currentIndex * newWidth}px)`;
   });
+
+  
+  (function(){
+  const header = document.querySelector('.main-header');
+  if(!header) return;
+  // Check sticky support
+  const test = document.createElement('a');
+  test.style.position = 'sticky';
+  const stickySupported = test.style.position.indexOf('sticky') !== -1;
+  if(stickySupported) return; // geen fallback nodig
+
+  // fallback: forceer fixed + reserveer ruimte equal to header height
+  const rect = header.getBoundingClientRect();
+  header.style.position = 'fixed';
+  header.style.top = '0';
+  header.style.left = '0';
+  header.style.right = '0';
+  header.style.zIndex = '9999';
+  document.body.style.paddingTop = rect.height + 'px';
+})();
 });
