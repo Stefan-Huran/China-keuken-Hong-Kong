@@ -8,8 +8,11 @@ body {
 header {
     background-color: #7b4a43;
     color: white;
-    text-align: center;
     padding: 50px 0;
+}
+
+header p {
+    text-align: left;
 }
 
 header h1 {
@@ -29,11 +32,13 @@ header h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   z-index: 9999;
 }
 
 .modal p, button {
   font-size: 1em;
+  text-align: center;
 }
 
 /* Popup box */
@@ -144,7 +149,12 @@ footer a {
     background-color: #7b4a43;
     margin-top: 1em;
     margin-bottom: 1em;
-     
+}
+
+.background-decor-header {
+    background-color: #7b4a43;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .background-decor-menu {
@@ -223,7 +233,11 @@ footer a {
 
 /* Header layout */
 .main-header {
-    height: 60vh;
+  position: relative; /* stacking context for pseudo/absolute children */
+  overflow: visible;
+  z-index: 1;
+  /* keep the visual height you already had */
+  height: 60vh;
     background: #7b4a43;
     color: #fff;
     display: flex;
@@ -241,6 +255,8 @@ footer a {
     letter-spacing: 0.01em;
 }
 .header-content {
+    position: relative;
+    z-index: 2;
     display: flex;
     width: 90vw;
     max-width: 1400px;
@@ -280,8 +296,10 @@ footer a {
     border-radius: 12px;
     padding: 2rem 2.5rem;
     box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    
     min-width: 320px;
     max-width: 400px;
+    text-align: center;
 }
 #restaurant-status {
     margin-top: 1.2em;
@@ -579,6 +597,19 @@ footer a {
     background: #eac2ad;
 }
 
+/* Remove bullets and spacing on the openingsuren list */
+.opening-hours-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.opening-hours-box ul li {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.35em 0;
+}
+
 @font-face {
     font-family: 'WangHanZongYanKai';
     src: url('../fonts/wt064.ttf') format('truetype');
@@ -618,6 +649,8 @@ footer a {
         min-width: unset;
         width: 100%;
         margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        
     }
     .bestel-nu-section {
         flex-direction: column;
@@ -653,4 +686,15 @@ footer a {
     #about-us ul {
         text-align: center;
     }
+      .background-decor-header { 
+        display: none; 
+    }
+
+  .main-header { 
+    height: auto; 
+    min-height: 46vh; 
+    padding-top: 1rem; 
 }
+
+}
+
