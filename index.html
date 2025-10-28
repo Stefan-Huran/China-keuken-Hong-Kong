@@ -56,13 +56,13 @@
 </head>
 <body>
 <!-- POP UP VOOR VAKANTIEBERICHT-->
-  <div id="announcement-modal" class="modal">     
+ <!-- <div id="announcement-modal" class="modal">     
   <div class="modal-content">
     <h2>Vakantiebericht</h2>
     <p>Ons restaurant is gesloten van 13 oktober t.e.m. 29 oktober wegens vakantie. We verwelkomen je graag terug vanaf 30 oktober!</p>
     <button id="close-modal">Sluiten</button>
   </div>
-</div>
+</div> -->
 <div class="pattern">
     <img class="background-decor-header" src="src/images/pattern.svg" alt="Decoratief patroon" loading="lazy">
     </div>
@@ -82,11 +82,12 @@
             <div class="opening-hours-box">
                 <h2>🕒 Openingsuren</h2>
                 <ul>
-                  <li style="font-weight: bold; font-size: 1.5em; color: red;">OP VERLOF</li>
+                  <!--<li style="font-weight: bold; font-size: 1.5em; color: red;">OP VERLOF</li>-->
                     <li>Dinsdag t.e.m. Vrijdag: 16:30 – 22:00</li>
                     <li>Zaterdag, Zondag & Feestdagen: 12:00 – 13:00 & 16:30 – 22:00</li>
                     <li>Maandag: Gesloten (behalve op feestdagen)</li>
                 </ul>
+                <div id="restaurant-status"></div>
             </div>
         </div>
     </div>
@@ -297,12 +298,12 @@ They have the best babi pangang I've ever had!"</p>
   </div>
 </footer>
     <script src="src/scripts/main.js"></script>
-    <script>
+   <!-- <script>
   // Close button
   document.getElementById("close-modal").addEventListener("click", function() {
     document.getElementById("announcement-modal").style.display = "none";
   });
-</script>
+</script> -->
 
 </body>
 </html>
