@@ -202,3 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     track.style.transform = `translateX(-${currentIndex * newWidth}px)`;
   });
 });
+/* put in comment if modal is absent (vakantiebericht) */
+document.getElementById("close-modal").addEventListener("click", function () {
+    document.getElementById("announcement-modal").style.display = "none";
+});
